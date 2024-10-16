@@ -3,13 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description"
+        content="Discover our journey of faith and purpose. Connect with us through daily promises, announcements, and testimonies.">
+    <meta name="keywords"
+        content="faith, testimonies, biographies, daily promise, christhecsi, chris, chrisjoel, chris joel, cj">
+    <meta name="author" content="christhecsi@Seed">
+    <meta property="og:title" content="christhecsi" />
+    <meta property="og:description"
+        content="Discover our journey of faith and purpose. Connect with us through daily promises, announcements, and testimonies." />
+    <meta property="og:image" content="./src/images/favicon.JPG" />
+    <meta property="og:url" content="https://christhecsi.github.io" />
+    <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>christhecsi</title>
+
+
 
     <link rel="shortcut icon" href="./src/images/favicon.JPG" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/seed.dashboard.css">
     <link rel="stylesheet" href="./src/css/fonts/MaterialIcons.css">
     <link rel="stylesheet" href="./src/css/ctc.common.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,6 +32,36 @@
 
     <!-- CSS : Loader -->
     <style>
+        .typing-animation {
+            border-right: 2px solid #ff4081;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(30) forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #ff4081;
+            }
+        }
+
         #loader {
             position: fixed;
             top: 0;
@@ -48,6 +92,11 @@
             100% {
                 transform: rotate(360deg);
             }
+        }
+
+        nav.show-mobile-menu .menu-links {
+            display: flex;
+            transition: all 0.3s ease-in-out;
         }
 
         /* Footer Styling */
@@ -175,11 +224,11 @@
     </header>
 
     <!-- HTML : Hero -->
-    <section class="hero-section">
+    <section id="hero" class="hero-section">
         <div class="content">
-            <h2 id="land.slogan"></h2>
-            <p id="land.slogan.abt"></p>
-            <button>Explore now</button>
+            <h2 id="land.slogan">Guided by Faith, Driven by Purpose.</h2>
+            <p id="land.slogan.abt">Let our faith light the way and our purpose propel us forward in all that we do</p>
+            <button onclick="window.location.href='./pages/ctc.home.html'">Explore now</button>
         </div>
     </section>
 
@@ -189,7 +238,7 @@
             <div class="row">
                 <div class="col-md-4 col-xl-3">
                     <div class="footer-logo">
-                        <a href="#"><img src="./src/images/favicon.JPG" alt="Logo"></a>
+                        <a href="#"><img src="./src/images/favicon.JPG" alt="Christ The CSI Logo"></a>
                     </div>
                     <p class="rights">
                         &copy; <span id="copyright-year">2024</span> christhecsi. <br> All Rights Reserved.
@@ -214,16 +263,14 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://www.facebook.com/share/pRo18zJLjwePkKs9/"
-                    target="https://www.facebook.com/share/pRo18zJLjwePkKs9/" class="social-icon"><i
+                <a href="https://www.facebook.com/share/pRo18zJLjwePkKs9/" target="_blank" class="social-icon"><i
                         class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/christhecsi/profilecard/?igsh=MTg2YWpqMjZ6dmxpeQ=="
-                    target="https://www.instagram.com/christhecsi/profilecard/?igsh=MTg2YWpqMjZ6dmxpeQ=="
+                <a href="https://www.instagram.com/christhecsi/profilecard/?igsh=MTg2YWpqMjZ6dmxpeQ==" target="_blank"
                     class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/qr/BFESBLJCY5JUJ1" target="https://wa.me/qr/BFESBLJCY5JUJ1"
-                    class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.youtube.com/@christhecsi" target="https://www.youtube.com/@christhecsi"
-                    class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/qr/BFESBLJCY5JUJ1" target="_blank" class="social-icon"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@christhecsi" target="_blank" class="social-icon"><i
+                        class="fab fa-youtube"></i></a>
             </div>
         </div>
 
@@ -255,7 +302,6 @@
             }
         </style>
 
-
         <div class="footer-bottom">
             <p>Made with &hearts;</p>
             <p>Designed & Developed by <a href=""><strong>&copy; Seed</strong></p></a>
@@ -270,13 +316,8 @@
         });
     </script>
 
+    <!-- SCRIPT : Mobile Viewport -->
     <script>
-        // Hide the loader when the page content is fully loaded
-        window.addEventListener("load", () => {
-            const loader = document.querySelector("#loader");
-            loader.style.display = "none"; // Hide the loader once the page is fully loaded
-        });
-
         const header = document.querySelector("header");
         const hamburgerBtn = document.querySelector("#hamburger-btn");
         const closeMenuBtn = document.querySelector("#close-menu-btn");
@@ -288,32 +329,48 @@
         closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
     </script>
 
+    <!-- SCRIPT : DOM.onload -->
     <script>
 
-        function loadSlogans() {
-            let SLN = [
-                "Guided by Faith, Driven by Purpose", "Let our faith light the way and our purpose propel us forward in all that we do"
-            ]
+        function getTodayDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const dd = String(today.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function updateSlogans(object1, object2) {
             fetch('./src/json/seed.slogans.json')
                 .then(response => {
-                    // Check if the response is OK (status code 200)
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
                     return response.json(); // Parse the JSON data
                 })
                 .then(data => {
-                    array = data['slogans']
-                    
-                    array.forEach(element => {
-                        console.log(element)
-                    });
-                    // console.log(data['slogans']); // Handle the parsed data here
+                    const slogans = data['slogans'];
+                    const randomIndex = Math.floor(Math.random() * slogans.length);
+                    const selectedSlogan = slogans[randomIndex];
+                    object1.innerText = selectedSlogan['slogan'];
+                    object2.innerText = selectedSlogan['subtext'];
                 })
                 .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
+                    object1.innerText = "Guided by Faith, Driven by Purpose";
+                    object2.innerText = "Let our faith light the way and our purpose propel us forward in all that we do";
                 });
-            return SLN
+        }
+
+        function updateHero() {
+            let hero = document.getElementById("hero");
+            const array = [
+                "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg",
+                "7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg",
+                "13.jpg","14.jpg","15.jpg",
+            ];
+            const randomIndex = Math.floor(Math.random() * array.length);
+            hero.style.backgroundImage = `url('./src/images/hero/${array[randomIndex]}')`;
         }
 
 
@@ -324,20 +381,37 @@
 
             const copyrightYearElement = document.getElementById("copyright-year");
             copyrightYearElement.textContent = currentYear;
-            loadSlogans();
             let slogan = document.getElementById("land.slogan");
             let slogan_info = document.getElementById("land.slogan.abt");
 
-            if (slogan.innerText == '') {
-                dtx = loadSlogans();
-                slogan.innerText = dtx[0];
-                slogan_info.innerText = dtx[1];
-            }
+            const lastUpdatedDate = localStorage.getItem("lastUpdatedDate");
+            const todayDate = getTodayDate();
 
-            if (currentHour == "00") {
-                // Change Slogan 
+            if (lastUpdatedDate !== todayDate) {
+                updateSlogans(slogan, slogan_info);
+                updateHero();
+                localStorage.setItem("lastUpdatedDate", todayDate); // Store today's date
+            } else {
+                console.log("already updated today.");
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const sloganElement = document.getElementById('land.slogan');
+            const sloganText = sloganElement.textContent;
+            sloganElement.textContent = ''; // Clear the text
+            let index = 0;
+
+            function type() {
+                if (index < sloganText.length) {
+                    sloganElement.textContent += sloganText.charAt(index);
+                    index++;
+                    setTimeout(type, 50);
+                }
+            }
+
+            type(); // Start typing animation
+        });
     </script>
 </body>
 <script src="./src/js/seed.dashboard.js"></script>
