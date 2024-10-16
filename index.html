@@ -13,7 +13,6 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Font Awesome CSS for social icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
@@ -146,6 +145,10 @@
                 text-align: center;
             }
         }
+
+        nav a {
+            text-decoration: none !important;
+        }
     </style>
 </head>
 
@@ -162,10 +165,10 @@
             <ul class="menu-links">
                 <span id="close-menu-btn" class="material-symbols-outlined">close</span>
                 <li><a href="./pages/ctc.home.html">Home</a></li>
-                <li><a href="#">Announcement</a></li>
                 <li><a href="#">Daily promise</a></li>
-                <li><a href="#">Biographies</a></li>
+                <li><a href="#">Announcement</a></li>
                 <li><a href="#">My Testimony</a></li>
+                <li><a href="#">Biographies</a></li>
             </ul>
             <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
         </nav>
@@ -174,8 +177,8 @@
     <!-- HTML : Hero -->
     <section class="hero-section">
         <div class="content">
-            <h2 id="land.slogan">Guided by Faith, Driven by Purpose</h2>
-            <p id="land.slogan.abt">Let our faith light the way and our purpose propel us forward in all that we do</p>
+            <h2 id="land.slogan"></h2>
+            <p id="land.slogan.abt"></p>
             <button>Explore now</button>
         </div>
     </section>
@@ -192,27 +195,70 @@
                         &copy; <span id="copyright-year">2024</span> christhecsi. <br> All Rights Reserved.
                     </p>
                 </div>
-                
+
                 <div class="col-md-4 col-xl-3 footer-links">
-                    <h5>Contact Us</h5>
+                    <h5>Contact Us :</h5>
                     <ul>
-                        <li><strong>Address:</strong> Your address here</li>
-                        <li><strong>Email:</strong> <a href="mailto:dkstudioin@gmail.com">dkstudioin@gmail.com</a></li>
-                        <li><strong>Phone:</strong> <a href="tel:+123456789">+1 234 567 890</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:christhecsi@gmail.com">christhecsi@gmail.com</a>
+                        </li>
+                        <li><strong>Phone:</strong> <a href="tel:+917675813525">+91 76758 13525</a></li>
+                    </ul>
+
+                    <h5>Sections :</h5>
+                    <ul>
+                        <li><strong>T&A : </strong> <a href="#">Click to know</a></li>
+                        <li><strong>About us : </strong> <a href="#">Know more about us</a></li>
+
                     </ul>
                 </div>
             </div>
 
             <div class="social-icons">
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/qr/BFESBLJCY5JUJ1" target="https://wa.me/qr/BFESBLJCY5JUJ1" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/share/pRo18zJLjwePkKs9/"
+                    target="https://www.facebook.com/share/pRo18zJLjwePkKs9/" class="social-icon"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/christhecsi/profilecard/?igsh=MTg2YWpqMjZ6dmxpeQ=="
+                    target="https://www.instagram.com/christhecsi/profilecard/?igsh=MTg2YWpqMjZ6dmxpeQ=="
+                    class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/qr/BFESBLJCY5JUJ1" target="https://wa.me/qr/BFESBLJCY5JUJ1"
+                    class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@christhecsi" target="https://www.youtube.com/@christhecsi"
+                    class="social-icon"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
 
+        <style>
+            .footer-bottom a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .footer-bottom a {
+                -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+                -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+                -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+                transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+                border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .footer-bottom a:hover {
+                border-bottom-color: transparent;
+            }
+
+            .footer-bottom a:hover {
+                color: #3498db;
+                text-decoration: dotted;
+
+
+            }
+        </style>
+
+
         <div class="footer-bottom">
-            <p>Designed & Developed by <strong>Seed</strong></p>
+            <p>Made with &hearts;</p>
+            <p>Designed & Developed by <a href=""><strong>&copy; Seed</strong></p></a>
         </div>
     </footer>
 
@@ -223,7 +269,7 @@
             loader.style.display = "none"; // Hide the loader once the page is fully loaded
         });
     </script>
-    
+
     <script>
         // Hide the loader when the page content is fully loaded
         window.addEventListener("load", () => {
@@ -241,6 +287,59 @@
         // Close mobile menu on close button click
         closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
     </script>
+
+    <script>
+
+        function loadSlogans() {
+            let SLN = [
+                "Guided by Faith, Driven by Purpose", "Let our faith light the way and our purpose propel us forward in all that we do"
+            ]
+            fetch('./src/json/seed.slogans.json')
+                .then(response => {
+                    // Check if the response is OK (status code 200)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // Parse the JSON data
+                })
+                .then(data => {
+                    array = data['slogans']
+                    
+                    array.forEach(element => {
+                        console.log(element)
+                    });
+                    // console.log(data['slogans']); // Handle the parsed data here
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+            return SLN
+        }
+
+
+        window.onload = function () {
+            // Get the current year
+            const currentYear = new Date().getFullYear();
+            const currentHour = new Date().getHours().toString();
+
+            const copyrightYearElement = document.getElementById("copyright-year");
+            copyrightYearElement.textContent = currentYear;
+            loadSlogans();
+            let slogan = document.getElementById("land.slogan");
+            let slogan_info = document.getElementById("land.slogan.abt");
+
+            if (slogan.innerText == '') {
+                dtx = loadSlogans();
+                slogan.innerText = dtx[0];
+                slogan_info.innerText = dtx[1];
+            }
+
+            if (currentHour == "00") {
+                // Change Slogan 
+            }
+        }
+    </script>
 </body>
-    <script src="./src/js/seed.dashboard.js"></script>
+<script src="./src/js/seed.dashboard.js"></script>
+
 </html>
