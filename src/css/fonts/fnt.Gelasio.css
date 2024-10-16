@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Gelasio-Bold;
+    src: url(../../fonts/Gelasio-Bold.ttf);
+}
+@font-face {
+    font-family: Gelasio-Italic;
+    src: url(../../fonts/Gelasio-Italic.ttf);
+}
+@font-face {
+    font-family: Gelasio-Medium;
+    src: url(../../fonts/Gelasio-Medium.ttf);
+}
+@font-face {
+    font-family: Gelasio-Regular;
+    src: url(../../fonts/Gelasio-Regular.ttf);
+}
+@font-face {
+    font-family: Gelasio-SemiBold;
+    src: url(../../fonts/Gelasio-SemiBold.ttf);
+}
