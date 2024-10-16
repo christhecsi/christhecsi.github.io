@@ -7,13 +7,154 @@
     <title>christhecsi</title>
 
     <link rel="shortcut icon" href="./src/images/favicon.JPG" type="image/x-icon">
-    <link rel="stylesheet" href="./src/css/dashboard.css">
+    <link rel="stylesheet" href="./src/css/seed.dashboard.css">
     <link rel="stylesheet" href="./src/css/fonts/MaterialIcons.css">
+    <link rel="stylesheet" href="./src/css/ctc.common.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Font Awesome CSS for social icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- CSS : Loader -->
+    <style>
+        /* Loader styles */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loader .spinner {
+            border: 8px solid #000;
+            border-top: 8px solid #ff4081;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2d3246;
+            color: #fff;
+            padding: 60px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer .footer-logo img {
+            width: 140px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        footer h5 {
+            color: #3498db;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-links ul li {
+            margin: 10px 0;
+        }
+
+        footer .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links ul li a:hover {
+            color: #3498db;
+        }
+
+        footer .social-icons {
+            display: flex;
+            align-self: start;
+            margin-left: 20px;
+            margin-right: 20px;
+            /* justify-content: space-between; */
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #3498db;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer .footer-logo {
+                margin-bottom: 20px;
+            }
+
+            footer .footer-links {
+                text-align: center;
+            }
+
+            footer .social-icons {
+                margin-top: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- HTML : Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- HTML : Header -->
     <header>
         <nav class="navbar">
             <a class="logo" href="#">christhecsi</a>
@@ -23,31 +164,63 @@
                 <li><a href="#">Announcement</a></li>
                 <li><a href="#">Daily promise</a></li>
                 <li><a href="#">Biographies</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">My Testimony</a></li>
             </ul>
             <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
         </nav>
     </header>
 
+    <!-- HTML : Hero -->
     <section class="hero-section">
         <div class="content">
-            <h2>Guided by Faith, Driven by Purpose</h2>
-            <p>Let our faith light the way and our purpose propel us forward in all that we do </p>
+            <h2 id="land.slogan">Guided by Faith, Driven by Purpose</h2>
+            <p id="land.slogan.abt">Let our faith light the way and our purpose propel us forward in all that we do</p>
             <button>Explore now</button>
         </div>
     </section>
 
+    <!-- HTML : Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="row">
+                <div class="col-md-4 col-xl-3">
+                    <div class="footer-logo">
+                        <a href="#"><img src="./src/images/favicon.JPG" alt="Logo"></a>
+                    </div>
+                    <p class="rights">
+                        &copy; <span id="copyright-year">2024</span> christhecsi. All Rights Reserved.
+                    </p>
+                </div>
+                
+                <div class="col-md-4 col-xl-3 footer-links">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><strong>Address:</strong> Your address here</li>
+                        <li><strong>Email:</strong> <a href="mailto:dkstudioin@gmail.com">dkstudioin@gmail.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+123456789">+1 234 567 890</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/qr/BFESBLJCY5JUJ1" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Designed & Developed by <strong>Seed</strong></p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT : Content Loader -->
     <script>
-        const header = document.querySelector("header");
-        const hamburgerBtn = document.querySelector("#hamburger-btn");
-        const closeMenuBtn = document.querySelector("#close-menu-btn");
-
-        // Toggle mobile menu on hamburger button click
-        hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
-
-        // Close mobile menu on close button click
-        closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+        window.addEventListener("load", () => {
+            const loader = document.querySelector("#loader");
+            loader.style.display = "none"; // Hide the loader once the page is fully loaded
+        });
     </script>
 
 </body>
