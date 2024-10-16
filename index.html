@@ -19,7 +19,6 @@
 
     <!-- CSS : Loader -->
     <style>
-        /* Loader styles */
         #loader {
             position: fixed;
             top: 0;
@@ -128,9 +127,8 @@
             }
 
             footer .footer-logo {
-
-                margin-left: 70px;
-                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
             }
 
             footer .footer-links {
@@ -142,6 +140,10 @@
                 flex-direction: row;
                 justify-content: center;
                 gap: 15px;
+            }
+
+            .rights {
+                text-align: center;
             }
         }
     </style>
@@ -221,7 +223,24 @@
             loader.style.display = "none"; // Hide the loader once the page is fully loaded
         });
     </script>
+    
+    <script>
+        // Hide the loader when the page content is fully loaded
+        window.addEventListener("load", () => {
+            const loader = document.querySelector("#loader");
+            loader.style.display = "none"; // Hide the loader once the page is fully loaded
+        });
 
+        const header = document.querySelector("header");
+        const hamburgerBtn = document.querySelector("#hamburger-btn");
+        const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+        // Toggle mobile menu on hamburger button click
+        hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+
+        // Close mobile menu on close button click
+        closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+    </script>
 </body>
-
+    <script src="./src/js/seed.dashboard.js"></script>
 </html>
