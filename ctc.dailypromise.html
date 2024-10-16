@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyPromise | christhecsi</title>
+
+    <link rel="stylesheet" href="./src/css/seed.dashboard.css">
+    <link rel="stylesheet" href="./src/css/seed.dp.css">
+    <link rel="stylesheet" href="./src/css/fonts/MaterialIcons.css">
+    <link rel="stylesheet" href="./src/css/ctc.common.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Font Awesome CSS for social icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loader .spinner {
+            border: 8px solid #000;
+            border-top: 8px solid #ff4081;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        nav.show-mobile-menu .menu-links {
+            display: flex;
+            transition: all 0.3s ease-in-out;
+        }
+        nav a {
+            text-decoration: none !important;
+        }
+
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const loader = document.querySelector("#loader");
+            loader.style.display = "none"; // Hide the loader once the page is fully loaded
+        });
+    </script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="./index.html">christhecsi</a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="./ctc.home.html">Home</a></li>
+                <li><a style="color: #C06B3E;" href="#">Daily promise</a></li>
+                <li><a href="#">Announcement</a></li>
+                <li><a href="#">My Testimony</a></li>
+                <li><a href="#">Biographies</a></li>
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+
+    
+
+    <div class="all">
+        <div class="toolbar sticky-toolbar">
+            <label for="month-select">Sort by Month:</label>
+            <select id="month-select" class="form-control">
+                <option value="all">All Months</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+    
+            <label for="year-select">Sort by Year:</label>
+            <select id="year-select" class="form-control">
+                <option value="all">All Years</option>
+                <option value="2024">2024</option>
+            </select>
+        </div>
+
+        
+        <div class="container" data-month="10" data-year="2024">
+            <div class="promise-img">
+                <img class="daily-promise-logo" src="./src/data/promises/17-10-2024.jpg" alt="Daily Promise of 12/06/2024" class="promise-img">
+            </div>
+            <div class="content">
+                <div class="promise-text">"Go into the world & proclaim the good news...", said Jesus</div>
+                <h5 id="cont.date">12/06/2024</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a download href="./test.jpeg" class="btn-download">DOWNLOAD</a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.body.style.backgroundImage = localStorage.getItem('bck.img');
+        function getTodayDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const dd = String(today.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function updateHero() {
+            let hero = document.getElementById("hero");
+            const array = [
+                "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg",
+                "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg",
+                "13.jpg", "14.jpg", "15.jpg",
+            ];
+            const randomIndex = Math.floor(Math.random() * array.length);
+            hero.style.backgroundImage = `url('./src/images/hero/${array[randomIndex]}')`;
+        }
+    </script>
+
+
+    <script>
+        const header = document.querySelector("header");
+        const hamburgerBtn = document.querySelector("#hamburger-btn");
+        const closeMenuBtn = document.querySelector("#close-menu-btn");
+        // Toggle mobile menu on hamburger button click
+        hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+        // Close mobile menu on close button click
+        closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+
+        document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    </script>
+
+    
+    <div id="imgModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+</body>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="./src/js/seed.dp.js"></script>
+</html>

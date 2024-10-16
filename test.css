@@ -1,0 +1,262 @@
+/* Reset */
+@import url('./fonts/fnt.Poppins.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-image 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1f1f1f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+header, nav {
+    position: relative; /* or fixed if necessary */
+    z-index: 10; /* Higher than containers */
+    position: absolute;
+    margin-bottom: 10% !important;
+}
+
+.all {
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* margin-top: 30%; */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.container {
+    margin-top: 20px;
+    position: relative; /* Positioning for the pseudo-element */
+    max-width: 800px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* overflow: hidden; */
+    text-align: center;
+    transition: transform 0.3s ease; /* Only transition transform */
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Make sure it's above the pseudo-element */
+}
+
+.container::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    backdrop-filter: blur(15px); 
+    border-radius: 15px; 
+    transition: opacity 0.3s ease; 
+    opacity: 0; 
+    z-index: -2; 
+}
+
+.container:hover::before {
+    opacity: 1; 
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+.daily-promise-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.daily-promise-logo:hover {
+    cursor: pointer;
+}
+
+.promise-text {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: aqua;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4081;
+}
+
+
+.content a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .promise-text {
+        font-size: 1.2rem;
+    }
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .promise-text {
+        font-size: 1rem;
+    }
+    .social-icons a {
+        font-size: 1rem;
+    }
+}
+
+
+.daily-promise-logo {
+    margin-top: 3%;
+    width: 250px;
+}
+
+.btn-download {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    outline: none; /* Disable the focus outline */
+    text-decoration: none;
+    
+}
+
+.btn-download:hover {
+    background-color: #ff376b;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.btn-download:active {
+    transform: scale(1.95);
+    background-color: #d13765;
+    border: none;
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.btn-download:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    width: 100vh;
+    text-align: center;
+    margin-top: 6%;
+    color: #fff;
+    background-color: #1f1f1f;
+}
+
+
+
+/* Responsive Desgin */
+
+@media (max-width :300px) {
+    * {
+        display: none;
+    }
+    
+    
+}
+
+@media (max-width: 768px) {
+    .all {
+        top: 100vh;
+        position: relative;
+        margin-top: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .social-icons a {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .all {
+        margin-top: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .social-icons a {
+        font-size: 1.6rem;
+        margin-bottom: 3%;
+    }
+
+    .container img {
+        margin-top: 6%;
+    }
+    .social-icons a {
+        font-size: 1.6rem;
+    }
+
+    .promise-text {
+        font-size: 1.2rem;
+    }
+    .btn-download {
+        margin-top: 2%;
+        margin-bottom: 6%;
+    }
+
+
+}

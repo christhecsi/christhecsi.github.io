@@ -32,6 +32,13 @@
 
     <!-- CSS : Loader -->
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         .typing-animation {
             border-right: 2px solid #ff4081;
             white-space: nowrap;
@@ -214,7 +221,7 @@
             <ul class="menu-links">
                 <span id="close-menu-btn" class="material-symbols-outlined">close</span>
                 <li><a href="./ctc.home.html">Home</a></li>
-                <li><a href="#">Daily promise</a></li>
+                <li><a href="./ctc.dailypromise.html">Daily promise</a></li>
                 <li><a href="#">Announcement</a></li>
                 <li><a href="#">My Testimony</a></li>
                 <li><a href="#">Biographies</a></li>
@@ -304,7 +311,7 @@
 
         <div class="footer-bottom">
             <p>Made with &hearts;</p>
-            <p>Designed & Developed by <a href=""><strong>&copy; Seed</strong></p></a>
+            <p>Designed & Developed by <a href=""><strong>&copy; Berith Jeshurun</strong></p></a>
         </div>
     </footer>
 
@@ -362,15 +369,15 @@
                 });
         }
 
-        function updateHero() {
-            let hero = document.getElementById("hero");
+        function updateHero(hero) {
             const array = [
-                "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg",
-                "7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg",
-                "13.jpg","14.jpg","15.jpg",
+                "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg",
+                "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg",
+                "13.jpg", "14.jpg", "15.jpg",
             ];
             const randomIndex = Math.floor(Math.random() * array.length);
             hero.style.backgroundImage = `url('./src/images/hero/${array[randomIndex]}')`;
+            
         }
 
 
@@ -386,14 +393,16 @@
 
             const lastUpdatedDate = localStorage.getItem("lastUpdatedDate");
             const todayDate = getTodayDate();
+            let hero = document.getElementById("hero");
 
             if (lastUpdatedDate !== todayDate) {
                 updateSlogans(slogan, slogan_info);
-                updateHero();
+                updateHero(hero);
                 localStorage.setItem("lastUpdatedDate", todayDate); // Store today's date
             } else {
                 console.log("already updated today.");
             }
+            localStorage.setItem('bck.img', getComputedStyle(hero).backgroundImage);
         }
 
         document.addEventListener('DOMContentLoaded', function () {
