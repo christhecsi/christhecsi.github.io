@@ -51,7 +51,6 @@ header .navbar {
 
 .hero-section {
   height: 100vh;
-  background-image: url("../images/hero/12.jpg"); /* Remove this  */
   background-position: center;
   background-size: cover;
   display: flex;

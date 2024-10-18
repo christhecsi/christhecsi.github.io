@@ -360,6 +360,9 @@
                     const randomIndex = Math.floor(Math.random() * slogans.length);
                     const selectedSlogan = slogans[randomIndex];
                     object1.innerText = selectedSlogan['slogan'];
+                    localStorage.setItem('val.slogan', selectedSlogan['slogan']);
+                    localStorage.setItem('val.slogan.sub', selectedSlogan['subtext']);
+
                     object2.innerText = selectedSlogan['subtext'];
                 })
                 .catch(error => {
@@ -394,15 +397,36 @@
             const lastUpdatedDate = localStorage.getItem("lastUpdatedDate");
             const todayDate = getTodayDate();
             let hero = document.getElementById("hero");
+            if (getComputedStyle(hero).backgroundImage === 'none') {
+                localStorage.setItem('set.hero', 'false');
+            }
 
             if (lastUpdatedDate !== todayDate) {
                 updateSlogans(slogan, slogan_info);
                 updateHero(hero);
+                localStorage.setItem('set.hero', true);
                 localStorage.setItem("lastUpdatedDate", todayDate); // Store today's date
             } else {
                 console.log("already updated today.");
             }
+            if (getComputedStyle(hero).backgroundImage === 'none') {
+                if (localStorage.getItem('bck.img') == 'none') {
+                    if (localStorage.getItem('set.hero') == 'false') {
+                        updateHero(hero);
+                        localStorage.setItem('set.hero', 'true');
+                    }
+                }else {
+                    hero.style.backgroundImage = localStorage.getItem('bck.img');
+                }
+                
+                if (lastUpdatedDate !== todayDate) {
+                    updateSlogans(slogan, slogan_info);
+                }
+            }
             localStorage.setItem('bck.img', getComputedStyle(hero).backgroundImage);
+            slogan.innerText = localStorage.getItem("val.slogan");
+            slogan_info.innerText = localStorage.getItem("val.slogan.sub");
+
         }
 
         document.addEventListener('DOMContentLoaded', function () {
